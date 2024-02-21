@@ -39,9 +39,9 @@ def getDevEmails(full_path_to_repo, branchName='master'):
     if os.path.exists(full_path_to_repo):
         repo_  = Repo(full_path_to_repo)
         try:
-           all_commits = list(repo_.iter_commits(branchName))   
+            all_commits = list(repo_.iter_commits(branchName))   
         except exc.GitCommandError:
-           print('Skipping this repo ... due to branch name problem', full_path_to_repo )
+            print('Skipping this repo ... due to branch name problem', full_path_to_repo )
         for commit_ in all_commits:
                 commit_hash = commit_.hexsha
 
